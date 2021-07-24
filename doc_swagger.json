@@ -1,0 +1,469 @@
+{
+"openapi": "3.0.1",
+"info": {
+"title": "OpenAPI definition",
+"version": "v0"
+},
+"servers": [
+{
+"url": "http://localhost:8080",
+"description": "Generated server url"
+}
+],
+"paths": {
+"/v1/auth/influencer/login/phone": {
+"post": {
+"tags": [
+"login-controller"
+],
+"operationId": "verifyNumber",
+"requestBody": {
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/LoginDTO"
+}
+}
+},
+"required": true
+},
+"responses": {
+"200": {
+"description": "OK",
+"content": {
+"*/*": {
+"schema": {
+"$ref": "#/components/schemas/OtpInitiateResponseDTO"
+}
+}
+}
+}
+}
+}
+},
+"/v1/auth/influencer/login/otp/verify": {
+"post": {
+"tags": [
+"login-controller"
+],
+"operationId": "verifyOtp",
+"requestBody": {
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/OtpVerificationRequestDTO"
+}
+}
+},
+"required": true
+},
+"responses": {
+"200": {
+"description": "OK",
+"content": {
+"*/*": {
+"schema": {
+"type": "string"
+}
+}
+}
+}
+}
+}
+},
+"/v1/auth/influencer/login/credentials": {
+"post": {
+"tags": [
+"login-controller"
+],
+"operationId": "createUserPhoneCredentials",
+"requestBody": {
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/CreateUserPhoneCredentialsDTO"
+}
+}
+},
+"required": true
+},
+"responses": {
+"200": {
+"description": "OK",
+"content": {
+"*/*": {
+"schema": {
+"type": "string"
+}
+}
+}
+}
+}
+}
+},
+"/v1/auth/fan/registration/otp/verify": {
+"post": {
+"tags": [
+"login-controller"
+],
+"operationId": "verifyRegistrationOtpForFan",
+"requestBody": {
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/OtpVerificationRequestDTO"
+}
+}
+},
+"required": true
+},
+"responses": {
+"200": {
+"description": "OK",
+"content": {
+"*/*": {
+"schema": {
+"$ref": "#/components/schemas/OtpVerificationFanRegistrationResponseDTO"
+}
+}
+}
+}
+}
+}
+},
+"/v1/auth/fan/registration/create": {
+"post": {
+"tags": [
+"login-controller"
+],
+"operationId": "createFanUser",
+"requestBody": {
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/CreateFanUserDTO"
+}
+}
+},
+"required": true
+},
+"responses": {
+"200": {
+"description": "OK",
+"content": {
+"*/*": {
+"schema": {
+"$ref": "#/components/schemas/AuthInfoDTO"
+}
+}
+}
+}
+}
+}
+},
+"/v1/auth/fan/login/phone": {
+"post": {
+"tags": [
+"login-controller"
+],
+"operationId": "verifyFanNumber",
+"requestBody": {
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/LoginDTO"
+}
+}
+},
+"required": true
+},
+"responses": {
+"200": {
+"description": "OK",
+"content": {
+"*/*": {
+"schema": {
+"$ref": "#/components/schemas/OtpInitiateResponseDTO"
+}
+}
+}
+}
+}
+}
+},
+"/v1/auth/fan/login/otp/verify": {
+"post": {
+"tags": [
+"login-controller"
+],
+"operationId": "verifyOtpForFan",
+"requestBody": {
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/OtpVerificationRequestDTO"
+}
+}
+},
+"required": true
+},
+"responses": {
+"200": {
+"description": "OK",
+"content": {
+"*/*": {
+"schema": {
+"$ref": "#/components/schemas/AuthInfoDTO"
+}
+}
+}
+}
+}
+}
+},
+"/v1/auth/doc": {
+"get": {
+"tags": [
+"login-controller"
+],
+"operationId": "addToCart_4",
+"responses": {
+"200": {
+"description": "OK",
+"content": {
+"text/html;charset=UTF-8": {
+"schema": {
+"type": "string"
+}
+}
+}
+}
+}
+},
+"put": {
+"tags": [
+"login-controller"
+],
+"operationId": "addToCart_1",
+"responses": {
+"200": {
+"description": "OK",
+"content": {
+"text/html;charset=UTF-8": {
+"schema": {
+"type": "string"
+}
+}
+}
+}
+}
+},
+"post": {
+"tags": [
+"login-controller"
+],
+"operationId": "addToCart_6",
+"responses": {
+"200": {
+"description": "OK",
+"content": {
+"text/html;charset=UTF-8": {
+"schema": {
+"type": "string"
+}
+}
+}
+}
+}
+},
+"delete": {
+"tags": [
+"login-controller"
+],
+"operationId": "addToCart_5",
+"responses": {
+"200": {
+"description": "OK",
+"content": {
+"text/html;charset=UTF-8": {
+"schema": {
+"type": "string"
+}
+}
+}
+}
+}
+},
+"options": {
+"tags": [
+"login-controller"
+],
+"operationId": "addToCart_3",
+"responses": {
+"200": {
+"description": "OK",
+"content": {
+"text/html;charset=UTF-8": {
+"schema": {
+"type": "string"
+}
+}
+}
+}
+}
+},
+"head": {
+"tags": [
+"login-controller"
+],
+"operationId": "addToCart_2",
+"responses": {
+"200": {
+"description": "OK",
+"content": {
+"text/html;charset=UTF-8": {
+"schema": {
+"type": "string"
+}
+}
+}
+}
+}
+},
+"patch": {
+"tags": [
+"login-controller"
+],
+"operationId": "addToCart",
+"responses": {
+"200": {
+"description": "OK",
+"content": {
+"text/html;charset=UTF-8": {
+"schema": {
+"type": "string"
+}
+}
+}
+}
+}
+}
+}
+},
+"components": {
+"schemas": {
+"LoginDTO": {
+"type": "object",
+"properties": {
+"number": {
+"type": "string"
+},
+"countryCode": {
+"type": "string"
+}
+}
+},
+"OtpInitiateResponseDTO": {
+"type": "object",
+"properties": {
+"flowType": {
+"type": "string"
+},
+"verificationId": {
+"type": "string"
+}
+}
+},
+"OtpVerificationRequestDTO": {
+"type": "object",
+"properties": {
+"requestId": {
+"type": "string"
+},
+"otp": {
+"type": "string"
+}
+}
+},
+"CreateUserPhoneCredentialsDTO": {
+"type": "object",
+"properties": {
+"phoneNumber": {
+"type": "string"
+}
+}
+},
+"OtpVerificationFanRegistrationResponseDTO": {
+"type": "object",
+"properties": {
+"success": {
+"type": "boolean"
+},
+"registrationId": {
+"type": "string"
+}
+}
+},
+"CreateFanUserDTO": {
+"required": [
+"dob",
+"firstName",
+"gender",
+"registrationId"
+],
+"type": "object",
+"properties": {
+"registrationId": {
+"type": "string"
+},
+"firstName": {
+"type": "string"
+},
+"lastName": {
+"type": "string"
+},
+"dob": {
+"type": "string",
+"format": "date-time"
+},
+"gender": {
+"type": "string",
+"enum": [
+"MALE",
+"FEMALE"
+]
+},
+"email": {
+"type": "string"
+}
+}
+},
+"AuthInfoDTO": {
+"type": "object",
+"properties": {
+"authToken": {
+"type": "string"
+},
+"userId": {
+"type": "string"
+},
+"userType": {
+"type": "string"
+},
+"identifier": {
+"type": "string"
+},
+"credentialType": {
+"type": "string"
+},
+"firstName": {
+"type": "string"
+},
+"lastName": {
+"type": "string"
+}
+}
+}
+}
+}
+}
